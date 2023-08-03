@@ -42,9 +42,13 @@ type Props = {
 const CryptoGraph = (props: Props) => {
   const { data } = props;
 
+  // Price Data for chart
   const info = data.sparkline;
+  // crypto price Data
   const price = Math.ceil(+data.price).toLocaleString("en-US");
+  // Positive Percentage Change
   const trending = data.change;
+  // Negative Percentage Change
   const negativeTrend = trending.includes("-");
 
   ChartJS.register(
@@ -97,14 +101,13 @@ const CryptoGraph = (props: Props) => {
   };
 
   return (
-    <div className=" ">
+    <div className="">
       <div className="flex gap-4">
         <div className="relative w-[1.5rem] h-[1.5rem]">
           <Image alt={data.name} fill src={data.iconUrl} />
         </div>
         <p className="">{data.name}</p>
       </div>
-
       <div className="flex justify-center items-center gap-[.5rem] w-[100%] ">
         <div className="flex items-center gap-2 ">
           <p className="text-[1rem] font-bold">${price}.00</p>

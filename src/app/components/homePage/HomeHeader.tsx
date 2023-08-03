@@ -28,7 +28,7 @@ function HomeHeader({}: Props) {
           investments, and market data seamlessly with our all-in-one crypto
           tracker platform
         </p>
-        <button className="bg-indigo-600 p-[1rem] text-white rounded-lg w-[80%] self-center">
+        <button className="bg-indigo-600 p-[1rem] text-white rounded-lg w-[80%] self-center shadow-md">
           Check The Charts
         </button>
       </div>

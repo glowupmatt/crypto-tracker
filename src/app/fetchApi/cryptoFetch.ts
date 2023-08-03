@@ -30,3 +30,13 @@ export const fetchCoinHistory = async (id: string, timeParam: string) => {
     console.error("Error: ", err);
   }
 };
+
+export const fetchAllCrypto = async () => {
+  try {
+    const { data } = await axios.get(`https://api.coinranking.com/v2/coins`);
+
+    return data;
+  } catch (err) {
+    console.error("Error: ", err);
+  }
+};

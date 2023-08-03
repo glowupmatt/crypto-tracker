@@ -3,17 +3,20 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { fetchTopFour } from "./fetchApi/cryptoFetch";
-import { data } from "./mockData/topFourCoins";
 import Header from "./components/Header";
+import { data } from "./mockData/allCryptoData";
+import { fetchAllCrypto } from "./fetchApi/cryptoFetch";
 import HomeHeader from "./components/homePage/HomeHeader";
 import CryptoPreviewSection from "./components/CryptoPreviewSection";
+import CrytpoConverter from "./components/CrytpoConverter";
 
 export default function Home() {
-  const [topFour, setTopFour] = useState();
+  const [cryptoData, setCryptoData] = useState<any>();
+  // const cryptoData = data;
 
-  // useEffect(() => {
-  //   fetchTopFour().then((data) => setTopFour(data.data.coin));
-  // }, []);
+  useEffect(() => {
+    fetchAllCrypto().then((data) => setCryptoData(data));
+  }, []);
 
   return (
     <div className="overflow-hidden">
@@ -23,6 +26,7 @@ export default function Home() {
       <div className="p-2 flex flex-col gap-8">
         <HomeHeader />
         <CryptoPreviewSection />
+        <CrytpoConverter cryptoData={cryptoData} />
       </div>
     </div>
   );

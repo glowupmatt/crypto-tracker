@@ -13,11 +13,13 @@ type Props = {};
 
 const CryptoPreviewSection = (props: Props) => {
   const [topFourIds, setTopFourIds] = useState<any[]>([]);
+
+  //Embla Crypto Carousel Data
   const autoplayOptions = {
     delay: 3000,
     stopOnInteraction: true,
   };
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay(autoplayOptions),
   ]);
 
@@ -53,7 +55,7 @@ const CryptoPreviewSection = (props: Props) => {
               return (
                 <div
                   key={index}
-                  className="embla__slide bg-white border-slate-200 border-2 rounded-lg p-4"
+                  className="embla__slide bg-white border-slate-200 border-2 rounded-lg p-4 shadow-lg"
                 >
                   <CryptoGraph data={data} />
                 </div>
