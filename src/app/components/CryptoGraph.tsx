@@ -127,7 +127,9 @@ const CryptoGraph = (props: Props) => {
             )}
           </div>
         </div>
-        <Line options={options} data={chartData} height={62.5} width={100} />
+        <div className="w-[6rem] h-[4rem]">
+          <Line options={options} data={chartData} height={62.5} width={100} />
+        </div>
       </div>
     </div>
   );
