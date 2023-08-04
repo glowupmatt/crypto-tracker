@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.coinranking.com",
       },
+      {
+        protocol: "https",
+        hostname: "images.readwrite.com",
+      },
     ],
   },
 };

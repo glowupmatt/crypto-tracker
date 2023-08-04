@@ -9,6 +9,8 @@ import { fetchAllCrypto } from "./fetchApi/cryptoFetch";
 import HomeHeader from "./components/homePage/HomeHeader";
 import CryptoPreviewSection from "./components/CryptoPreviewSection";
 import CrytpoConverter from "./components/CrytpoConverter";
+import NewsFeedPreviewSlide from "./components/NewsFeedPreviewSlide";
+import Footer from "./components/Footer";
 
 export type CryptoObjType = {
   CryptoObj: {
@@ -76,7 +78,9 @@ export default function Home() {
         <HomeHeader />
         <CryptoPreviewSection />
         <CrytpoConverter CryptoObj={CryptoObj} />
+        <NewsFeedPreviewSlide />
       </div>
+      <Footer />
     </div>
   );
 }
