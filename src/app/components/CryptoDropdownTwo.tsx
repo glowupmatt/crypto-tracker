@@ -16,10 +16,8 @@ import { CoinType } from "../page";
 
 type Props = {
   CryptoObj: CoinType;
-  selectedTokenOne: TokenType | undefined;
-  setSelectedTokenOne: React.Dispatch<
-    React.SetStateAction<TokenType | undefined>
-  >;
+  selectedTokenTwo: TokenType | undefined;
+  setSelectedTokenTwo: React.Dispatch<React.SetStateAction<TokenType>>;
 };
 
 type TokenType = {
@@ -41,8 +39,8 @@ type TokenType = {
   btcPrice: string;
 };
 
-const CryptoDropdownOne = (props: Props) => {
-  const { CryptoObj, selectedTokenOne, setSelectedTokenOne } = props;
+const CryptoDropdownTwo = (props: Props) => {
+  const { CryptoObj, selectedTokenTwo, setSelectedTokenTwo } = props;
 
   const coinsLimit = CryptoObj.slice(0, 7);
 
@@ -51,24 +49,24 @@ const CryptoDropdownOne = (props: Props) => {
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>
-            {selectedTokenOne === undefined ? (
+            {selectedTokenTwo === undefined ? (
               <p className="text-[.6rem]">Choose Coin</p>
             ) : (
               <div className="flex flex-row-reverse justify-center items-center gap-3">
                 <Image
-                  alt={selectedTokenOne.name}
-                  src={selectedTokenOne.iconUrl}
+                  alt={selectedTokenTwo.name}
+                  src={selectedTokenTwo.iconUrl}
                   width={25}
                   height={25}
                 />
-                <p className="text-[.8rem]">{selectedTokenOne.symbol}</p>
+                <p className="text-[.8rem]">{selectedTokenTwo.symbol}</p>
               </div>
             )}
           </NavigationMenuTrigger>
           <NavigationMenuContent className="overflow-scroll h-[25rem] w-full flex flex-col gap-2 items-center">
             {coinsLimit.map((coin: TokenType, index) => {
               const onClickHandler = () => {
-                setSelectedTokenOne(coin);
+                setSelectedTokenTwo(coin);
               };
               return (
                 <NavigationMenuLink
@@ -94,4 +92,4 @@ const CryptoDropdownOne = (props: Props) => {
   );
 };
 
-export default CryptoDropdownOne;
+export default CryptoDropdownTwo;

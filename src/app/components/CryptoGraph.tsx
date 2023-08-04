@@ -108,7 +108,7 @@ const CryptoGraph = (props: Props) => {
         </div>
         <p className="">{data.name}</p>
       </div>
-      <div className="flex justify-center items-center gap-[.5rem] w-[100%] ">
+      <div className="flex justify-between items-center gap-[.5rem] w-[100%] ">
         <div className="flex items-center gap-2 ">
           <p className="text-[1rem] font-bold">${price}.00</p>
           <div className="flex">

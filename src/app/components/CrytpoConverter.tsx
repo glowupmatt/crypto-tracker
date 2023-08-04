@@ -4,45 +4,16 @@ import React from "react";
 import CurrencyExchangeIcon from "@mui/icons-material/CurrencyExchange";
 import SwapVerticalCircleIcon from "@mui/icons-material/SwapVerticalCircle";
 import CryptoSwapInput from "./CryptoSwapInput";
+import { CoinType } from "../page";
 
 type Props = {
-  cryptoData: {
-    status: string;
-    data: {
-      stats: {
-        total: number;
-        totalCoins: number;
-        totalMarkets: number;
-        totalExchanges: number;
-        totalMarketCap: string;
-        total24hVolume: string;
-      };
-      coins: {
-        uuid: string;
-        symbol: string;
-        name: string;
-        color: string;
-        iconUrl: string;
-        marketCap: string;
-        price: string;
-        listedAt: number;
-        tier: number;
-        change: string;
-        rank: number;
-        sparkline: string[];
-        lowVolume: boolean;
-        coinrankingUrl: string;
-        "24hVolume": string;
-        btcPrice: string;
-      }[];
-    };
-  };
+  CryptoObj: CoinType;
 };
 
 const CrytpoConverter = (props: Props) => {
-  const { cryptoData } = props;
-  if (cryptoData) {
-    const coins = cryptoData.data.coins;
+  const { CryptoObj } = props;
+
+  if (CryptoObj) {
     return (
       <div className="bg-white h-[30rem] shadow-lg flex flex-col items-center justify-center py-8 gap-8">
         <div className="flex flex-col items-center justify-center text-center bg-gray-300 p-4 rounded-lg w-[90%] shadow-md">
@@ -55,7 +26,7 @@ const CrytpoConverter = (props: Props) => {
             with our intuitive and accurate crypto converter tool.
           </p>
         </div>
-        <CryptoSwapInput coins={coins} />
+        <CryptoSwapInput CryptoObj={CryptoObj} />
       </div>
     );
   }

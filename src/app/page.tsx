@@ -10,13 +10,62 @@ import HomeHeader from "./components/homePage/HomeHeader";
 import CryptoPreviewSection from "./components/CryptoPreviewSection";
 import CrytpoConverter from "./components/CrytpoConverter";
 
-export default function Home() {
-  const [cryptoData, setCryptoData] = useState<any>();
-  // const cryptoData = data;
+export type CryptoObjType = {
+  CryptoObj: {
+    stats: {
+      total: number;
+      totalCoins: number;
+      totalMarkets: number;
+      totalExchanges: number;
+      totalMarketCap: string;
+      total24hVolume: string;
+    };
+    coins: {
+      uuid: string;
+      symbol: string;
+      name: string;
+      color: string;
+      iconUrl: string;
+      marketCap: string;
+      price: string;
+      listedAt: number;
+      tier: number;
+      change: string;
+      rank: number;
+      sparkline: string[];
+      lowVolume: boolean;
+      coinrankingUrl: string;
+      "24hVolume": string;
+      btcPrice: string;
+    }[];
+  };
+};
 
-  useEffect(() => {
-    fetchAllCrypto().then((data) => setCryptoData(data));
-  }, []);
+export type CoinType = {
+  uuid: string;
+  symbol: string;
+  name: string;
+  color: string;
+  iconUrl: string;
+  marketCap: string;
+  price: string;
+  listedAt: number;
+  tier: number;
+  change: string;
+  rank: number;
+  sparkline: string[];
+  lowVolume: boolean;
+  coinrankingUrl: string;
+  "24hVolume": string;
+  btcPrice: string;
+}[];
+
+export default function Home() {
+  // const [cryptoData, setCryptoData] = useState<CryptoDataType>();
+  const CryptoObj: CoinType | any = data.data.coins;
+  // useEffect(() => {
+  //   fetchAllCrypto().then((data) => setCryptoData(data.data.coins));
+  // }, []);
 
   return (
     <div className="overflow-hidden">
@@ -26,7 +75,7 @@ export default function Home() {
       <div className="p-2 flex flex-col gap-8">
         <HomeHeader />
         <CryptoPreviewSection />
-        <CrytpoConverter cryptoData={cryptoData} />
+        <CrytpoConverter CryptoObj={CryptoObj} />
       </div>
     </div>
   );
