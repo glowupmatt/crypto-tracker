@@ -9,7 +9,6 @@ const options = {
   },
 };
 
-const headers = process.env.NEXT_PUBLIC_NEWS_API;
 export const broadCryptoNews = async (queries: string, pageSize: number) => {
   try {
     const { data } = await axios.get(

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { broadCryptoNews } from "../fetchApi/newsFetch";
-
 import NewsCard from "./NewsCard";
 import Link from "next/link";
 
@@ -34,6 +33,7 @@ const NewsFeedPreviewSlide = (props: Props) => {
 
   if (newsFeed !== undefined && newsFeed.articles) {
     const slicedFeed = newsFeed.articles.slice(3);
+    console.log(slicedFeed);
 
     return (
       <div className="bg-slate-200 rounded-md flex flex-col gap-2 justify-center items-center py-4">
