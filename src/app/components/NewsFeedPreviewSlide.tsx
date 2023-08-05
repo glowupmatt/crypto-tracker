@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { broadCryptoNews } from "../fetchApi/newsFetch";
 import { singleFeedType, NewsType } from "../mockData/singleNewsFeedType";
+import { newsCardMockType } from "../mockData/fullNewsData";
 import NewsCard from "./NewsCard";
 import Link from "next/link";
 
@@ -11,6 +12,8 @@ const NewsFeedPreviewSlide = (props: Props) => {
   useEffect(() => {
     broadCryptoNews().then((data) => setNewsFeed(data));
   }, []);
+
+  console.log(newsFeed);
 
   // const newsFeed: NewsType[] = previewDataFeed;
 

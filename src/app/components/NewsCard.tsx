@@ -13,7 +13,7 @@ const NewsCard = (props: Props) => {
   return (
     <div className="flex justify-center items-center">
       {data.image && data.category ? (
-        <div className="bg-white p-4 w-[90%] rounded-lg flex gap-4 flex-row">
+        <div className="bg-white p-4 w-[90%] rounded-lg flex gap-4 flex-row justify-evenly">
           <div className="w-[7rem] h-full flex flex-col gap-[1rem]">
             <img
               alt={data.name}
@@ -28,7 +28,9 @@ const NewsCard = (props: Props) => {
             </p>
           </div>
 
-          <p className="text-[.7rem] w-[9rem]">{data.name.substring(0, 100)}</p>
+          <p className="text-[.7rem] w-[95%]">
+            {data.name.substring(0, 80)}...
+          </p>
         </div>
       ) : null}
     </div>
