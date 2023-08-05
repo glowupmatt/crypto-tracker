@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { broadCryptoNews } from "../fetchApi/newsFetch";
-import { previewDataFeed } from "../mockData/newsFeed";
 import { singleFeedType, NewsType } from "../mockData/singleNewsFeedType";
 import NewsCard from "./NewsCard";
 import Link from "next/link";
