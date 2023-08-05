@@ -1,165 +1,512 @@
-export const previewDataFeed = [
+import { NewsType } from "./singleNewsFeedType";
+
+export const previewDataFeed: NewsType[] = [
   {
-    source: {
-      id: "google-news",
-      name: "Google News",
+    _type: "NewsArticle",
+    name: "Founder of bankrupt crypto lender Celsius must face NY fraud lawsuit",
+    url: "https://www.msn.com/en-us/money/companies/founder-of-bankrupt-crypto-lender-celsius-must-face-ny-fraud-lawsuit/ar-AA1eOyx3",
+    image: {
+      _type: "ImageObject",
+      thumbnail: {
+        _type: "ImageObject",
+        contentUrl:
+          "https://www.bing.com/th?id=OVFT.qxTZr-syk2UWcOzgK3E7oy&pid=News",
+        width: 700,
+        height: 366,
+      },
     },
-    author: null,
-    title: "UK watchdog shuts more illegal cryptocurrency 'machines' - Reuters",
     description:
-      "UK watchdog shuts more illegal cryptocurrency 'machines'  Reuters",
-    url: "https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CBMiZWh0dHBzOi8vd3d3LnJldXRlcnMuY29tL3RlY2hub2xvZ3kvdWstd2F0Y2hkb2ctc2h1dHMtbW9yZS1pbGxlZ2FsLWNyeXB0b2N1cnJlbmN5LW1hY2hpbmVzLTIwMjMtMDctMTAv0gEA?oc%3D5&gl=FR&hl=en-US&cm=2&pc=n&src=1",
-    urlToImage: null,
-    publishedAt: "2023-07-11T02:31:00Z",
-    content:
-      "We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]",
+      "Alex Mashinsky, the founder and former chief of the now-bankrupt cryptocurrency lender Celsius Network, must face a lawsuit by New York Attorney General Letitia James accusing him of civil fraud, a Manhattan state court judge ruled on Friday.",
+    about: [
+      {
+        _type: "Thing",
+        readLink:
+          "https://api.cognitive.microsoft.com/api/v7/entities/caeb7b9a-f5d7-4686-8fb5-cf7628296b13",
+        name: "New York",
+      },
+      {
+        _type: "Thing",
+        readLink:
+          "https://api.cognitive.microsoft.com/api/v7/entities/9f417f89-9a37-e0d0-912e-99dccfb8982d",
+        name: "Reuters",
+      },
+    ],
+    mentions: [
+      {
+        _type: "Thing",
+        name: "New York",
+      },
+      {
+        _type: "Thing",
+        name: "Reuters",
+      },
+      {
+        _type: "Thing",
+        name: "Supreme Court of the United States",
+      },
+    ],
+    provider: [
+      {
+        _type: "Organization",
+        name: "Reuters on MSN.com",
+        image: {
+          _type: "ImageObject",
+          thumbnail: {
+            _type: "ImageObject",
+            contentUrl:
+              "https://www.bing.com/th?id=ODF.jFXbg3L7Ce_1pS4_IOR8CA&pid=news",
+          },
+        },
+      },
+    ],
+    datePublished: "2023-08-04T23:43:59.0000000Z",
+    category: "Business",
   },
   {
-    source: {
-      id: null,
-      name: "ReadWrite",
+    _type: "NewsArticle",
+    name: "Bitfinex hacker, rapper wife plead guilty in crypto heist money laundering",
+    url: "https://www.seattletimes.com/business/bitfinex-hacker-rapper-wife-plead-guilty-in-crypto-heist-money-laundering/",
+    image: {
+      _type: "ImageObject",
+      thumbnail: {
+        _type: "ImageObject",
+        contentUrl:
+          "https://www.bing.com/th?id=OVFT.5gbSiAIfoNYCFI8EMMdZ5y&pid=News",
+        width: 700,
+        height: 367,
+      },
     },
-    author: "John Boitnott",
-    title: "North Korean Hackers Are Targeting Your Cryptocurrency",
     description:
-      "In a recent cybersecurity breach, North Korea-backed hackers targeted cryptocurrency clients by infiltrating the systems of JumpCloud, a prominent U.S. […]\nThe post North Korean Hackers Are Targeting Your Cryptocurrency appeared first on ReadWrite.",
-    url: "https://readwrite.com/north-korean-hackers-are-targeting-your-cryptocurrency/",
-    urlToImage:
-      "https://images.readwrite.com/wp-content/uploads/2023/07/micha-brandli-H8nYVhBORW8-unsplash.jpg",
-    publishedAt: "2023-07-20T20:50:14Z",
-    content:
-      "In a recent cybersecurity breach, North Korea-backed hackerstargeted cryptocurrency clients by infiltrating the systems of JumpCloud, a prominent U.S. enterprise software company. The breach, attribu… [+8677 chars]",
+      "One of the most enduring mysteries in the world of cryptocurrencies was resolved Thursday when Ilya Lichtenstein acknowledged that he was the hacker who executed the 2016 attack on the Bitfinex exchange.",
+    provider: [
+      {
+        _type: "Organization",
+        name: "Seattle Times",
+        image: {
+          _type: "ImageObject",
+          thumbnail: {
+            _type: "ImageObject",
+            contentUrl:
+              "https://www.bing.com/th?id=ODF.fpemrnMQqt6geHmUwb0LPQ&pid=news",
+          },
+        },
+      },
+    ],
+    datePublished: "2023-08-04T09:43:00.0000000Z",
+    category: "ScienceAndTechnology",
+    ampUrl:
+      "https://www.seattletimes.com/business/bitfinex-hacker-rapper-wife-plead-guilty-in-crypto-heist-money-laundering/?amp=1",
   },
   {
-    source: {
-      id: null,
-      name: "Gizmodo.com",
+    _type: "NewsArticle",
+    name: "What Congress Can Learn From “Razzlekhan” About Crypto AML",
+    url: "https://www.forbes.com/sites/digital-assets/2023/08/04/what-congress-can-learn-from-razzlekhan-about-crypto-aml/",
+    image: {
+      _type: "ImageObject",
+      thumbnail: {
+        _type: "ImageObject",
+        contentUrl:
+          "https://www.bing.com/th?id=OVFT.3-ghMS4F3XIu9z3bS-r_Xi&pid=News",
+        width: 700,
+        height: 466,
+      },
     },
-    author: "Mack DeGeurin",
-    title:
-      "Worldcoin, Sam Altman's Creepy Vision for Iris-Scanning 'Global Digital Currency', Begins Rollout",
     description:
-      "OpenAI CEO Sam Altman’s sci-fi-tinged, iris-scanning cryptocurrency project Worldcoin began rolling out services internationally today. The extent to which Worldcoin actually delivers on its promise of a “new global digital currency,” however, may vary dramat…",
-    url: "https://gizmodo.com/worldcoin-launch-crypto-sam-altman-eye-scan-openai-1850670115",
-    urlToImage:
-      "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/0d9e34027562a428841c8028402b8a40.png",
-    publishedAt: "2023-07-24T15:53:38Z",
-    content:
-      "OpenAI CEO Sam Altmans sci-fi-tinged, iris-scanning cryptocurrency project Worldcoin began rolling out services internationally today. The extent to which Worldcoin actually delivers on its promise o… [+4489 chars]",
+      "While the Senate debates and discusses AML for crypto, there is a lot legislators can learn from the recent pleas in the Bitfinex hack case.",
+    provider: [
+      {
+        _type: "Organization",
+        name: "Forbes",
+        image: {
+          _type: "ImageObject",
+          thumbnail: {
+            _type: "ImageObject",
+            contentUrl:
+              "https://www.bing.com/th?id=ODF.U6nYa4Huf-RFEhjg-V4hNg&pid=news",
+          },
+        },
+      },
+    ],
+    datePublished: "2023-08-04T13:50:00.0000000Z",
+    category: "ScienceAndTechnology",
+    ampUrl:
+      "https://www.forbes.com/sites/digital-assets/2023/08/04/what-congress-can-learn-from-razzlekhan-about-crypto-aml/amp/",
   },
   {
-    source: {
-      id: "google-news",
-      name: "Google News",
+    _type: "NewsArticle",
+    name: "Founder of bankrupt crypto lender Celsius must face NY fraud lawsuit",
+    url: "https://www.msn.com/en-us/money/companies/founder-of-bankrupt-crypto-lender-celsius-must-face-ny-fraud-lawsuit/ar-AA1eOyx3",
+    image: {
+      _type: "ImageObject",
+      thumbnail: {
+        _type: "ImageObject",
+        contentUrl:
+          "https://www.bing.com/th?id=OVFT.qxTZr-syk2UWcOzgK3E7oy&pid=News",
+        width: 700,
+        height: 366,
+      },
     },
-    author: null,
-    title:
-      "Judge gives Ripple partial win in SEC case over XRP cryptocurrency - Reuters",
     description:
-      "Judge gives Ripple partial win in SEC case over XRP cryptocurrency  Reuters",
-    url: "https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CBMicGh0dHBzOi8vd3d3LnJldXRlcnMuY29tL2xlZ2FsL3VzLWp1ZGdlLXNheXMtc2VjLWxhd3N1aXQtdnMtcmlwcGxlLWxhYnMtY2FuLXByb2NlZWQtdHJpYWwtc29tZS1jbGFpbXMtMjAyMy0wNy0xMy_SAQA?oc%3D5&gl=FR&hl=en-US&cm=2&pc=n&src=1",
-    urlToImage: null,
-    publishedAt: "2023-07-13T16:52:00Z",
-    content:
-      "We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]",
+      "Alex Mashinsky, the founder and former chief of the now-bankrupt cryptocurrency lender Celsius Network, must face a lawsuit by New York Attorney General Letitia James accusing him of civil fraud, a Manhattan state court judge ruled on Friday.",
+    about: [
+      {
+        _type: "Thing",
+        readLink:
+          "https://api.cognitive.microsoft.com/api/v7/entities/caeb7b9a-f5d7-4686-8fb5-cf7628296b13",
+        name: "New York",
+      },
+      {
+        _type: "Thing",
+        readLink:
+          "https://api.cognitive.microsoft.com/api/v7/entities/9f417f89-9a37-e0d0-912e-99dccfb8982d",
+        name: "Reuters",
+      },
+    ],
+    mentions: [
+      {
+        _type: "Thing",
+        name: "New York",
+      },
+      {
+        _type: "Thing",
+        name: "Reuters",
+      },
+      {
+        _type: "Thing",
+        name: "Supreme Court of the United States",
+      },
+    ],
+    provider: [
+      {
+        _type: "Organization",
+        name: "Reuters on MSN.com",
+        image: {
+          _type: "ImageObject",
+          thumbnail: {
+            _type: "ImageObject",
+            contentUrl:
+              "https://www.bing.com/th?id=ODF.jFXbg3L7Ce_1pS4_IOR8CA&pid=news",
+          },
+        },
+      },
+    ],
+    datePublished: "2023-08-04T23:43:59.0000000Z",
+    category: "Business",
   },
   {
-    source: {
-      id: "google-news",
-      name: "Google News",
+    _type: "NewsArticle",
+    name: "Founder of bankrupt crypto lender Celsius must face NY fraud lawsuit",
+    url: "https://www.msn.com/en-us/money/companies/founder-of-bankrupt-crypto-lender-celsius-must-face-ny-fraud-lawsuit/ar-AA1eOyx3",
+    image: {
+      _type: "ImageObject",
+      thumbnail: {
+        _type: "ImageObject",
+        contentUrl:
+          "https://www.bing.com/th?id=OVFT.qxTZr-syk2UWcOzgK3E7oy&pid=News",
+        width: 700,
+        height: 366,
+      },
     },
-    author: null,
-    title:
-      "Britain's Nationwide curbs cryptocurrency purchases by customers - Reuters.com - ns talk news - nstalknews",
     description:
-      "Britain's Nationwide curbs cryptocurrency purchases by customers - Reuters.com - ns talk news  nstalknews",
-    url: "https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CBMiY2h0dHBzOi8vbnN0YWxrbmV3cy5jb20vYnJpdGFpbnMtbmF0aW9ud2lkZS1jdXJicy1jcnlwdG9jdXJyZW5jeS1wdXJjaGFzZXMtYnktY3VzdG9tZXJzLXJldXRlcnMtY29tL9IBAA?oc%3D5%26hl%3Den-CA%26gl%3DCA%26ceid%3DCA:en&gl=FR&hl=en-CA&cm=2&pc=n&src=1",
-    urlToImage: null,
-    publishedAt: "2023-07-24T05:46:25Z",
-    content:
-      "We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]",
+      "Alex Mashinsky, the founder and former chief of the now-bankrupt cryptocurrency lender Celsius Network, must face a lawsuit by New York Attorney General Letitia James accusing him of civil fraud, a Manhattan state court judge ruled on Friday.",
+    about: [
+      {
+        _type: "Thing",
+        readLink:
+          "https://api.cognitive.microsoft.com/api/v7/entities/caeb7b9a-f5d7-4686-8fb5-cf7628296b13",
+        name: "New York",
+      },
+      {
+        _type: "Thing",
+        readLink:
+          "https://api.cognitive.microsoft.com/api/v7/entities/9f417f89-9a37-e0d0-912e-99dccfb8982d",
+        name: "Reuters",
+      },
+    ],
+    mentions: [
+      {
+        _type: "Thing",
+        name: "New York",
+      },
+      {
+        _type: "Thing",
+        name: "Reuters",
+      },
+      {
+        _type: "Thing",
+        name: "Supreme Court of the United States",
+      },
+    ],
+    provider: [
+      {
+        _type: "Organization",
+        name: "Reuters on MSN.com",
+        image: {
+          _type: "ImageObject",
+          thumbnail: {
+            _type: "ImageObject",
+            contentUrl:
+              "https://www.bing.com/th?id=ODF.jFXbg3L7Ce_1pS4_IOR8CA&pid=news",
+          },
+        },
+      },
+    ],
+    datePublished: "2023-08-04T23:43:59.0000000Z",
+    category: "Business",
   },
   {
-    source: {
-      id: "google-news",
-      name: "Google News",
+    _type: "NewsArticle",
+    name: "GameStop, citing “regulatory uncertainty,” winds down its crypto and NFT wallet",
+    url: "https://arstechnica.com/gaming/2023/08/gamestop-citing-regulatory-uncertainty-winds-down-its-crypto-and-nft-wallet/",
+    image: {
+      _type: "ImageObject",
+      thumbnail: {
+        _type: "ImageObject",
+        contentUrl:
+          "https://www.bing.com/th?id=OVFT.jYmSVhP6mMuHVrffkPDOzy&pid=News",
+        width: 700,
+        height: 350,
+      },
     },
-    author: null,
-    title:
-      "Binance users traded $90 bln of cryptocurrency assets in China in a single month - WSJ - TradingView",
     description:
-      "Binance users traded $90 bln of cryptocurrency assets in China in a single month - WSJ  TradingView",
-    url: "https://consent.google.com/ml?continue=https://news.google.com/rss/articles/CBMimAFodHRwczovL2luLnRyYWRpbmd2aWV3LmNvbS9uZXdzL3JldXRlcnMuY29tLDIwMjM6bmV3c21sX0w0TjM5SjBXSTowLWJpbmFuY2UtdXNlcnMtdHJhZGVkLTkwLWJsbi1vZi1jcnlwdG9jdXJyZW5jeS1hc3NldHMtaW4tY2hpbmEtaW4tYS1zaW5nbGUtbW9udGgtd3NqL9IBAA?oc%3D5&gl=FR&hl=en-US&cm=2&pc=n&src=1",
-    urlToImage: null,
-    publishedAt: "2023-08-02T03:12:00Z",
-    content:
-      "We use cookies and data to<ul><li>Deliver and maintain Google services</li><li>Track outages and protect against spam, fraud, and abuse</li><li>Measure audience engagement and site statistics to unde… [+1131 chars]",
+      "GameStop launched the wallet in May 2022, less than two weeks after Bitcoin and other virtual currencies experienced widespread destabilization and sell-offs. Still, GameStop seemed bullish on the blockchain and launched its own late-coming NFT marketplace in July of that year to non-epic returns.",
+    about: [
+      {
+        _type: "Thing",
+        readLink:
+          "https://api.cognitive.microsoft.com/api/v7/entities/fe6b61fa-d430-27c6-fb01-7111acf6037a",
+        name: "GameStop",
+      },
+    ],
+    provider: [
+      {
+        _type: "Organization",
+        name: "Ars Technica",
+        image: {
+          _type: "ImageObject",
+          thumbnail: {
+            _type: "ImageObject",
+            contentUrl:
+              "https://www.bing.com/th?id=ODF.ujb7xrXKIzzWUeiq3sEXxg&pid=news",
+          },
+        },
+      },
+    ],
+    datePublished: "2023-08-04T16:20:00.0000000Z",
+    ampUrl:
+      "https://arstechnica.com/gaming/2023/08/gamestop-citing-regulatory-uncertainty-winds-down-its-crypto-and-nft-wallet/amp/",
   },
   {
-    source: {
-      id: "business-insider",
-      name: "Business Insider",
+    _type: "NewsArticle",
+    name: "GameStop Gives Up On Crypto After One Year",
+    url: "https://www.gamespot.com/articles/gamestop-gives-up-on-crypto-after-one-year/1100-6516582/",
+    image: {
+      _type: "ImageObject",
+      thumbnail: {
+        _type: "ImageObject",
+        contentUrl:
+          "https://www.bing.com/th?id=OVFT.fTeGtVS7SPLxSzKg5y-dly&pid=News",
+        width: 700,
+        height: 393,
+      },
     },
-    author: "mmark@businessinsider.com (Michelle Mark)",
-    title:
-      "'Crypto couple' husband confesses to being the original Bitfinex hacker during plea hearing",
     description:
-      "Ilya Lichtenstein pleaded guilty to conspiring to launder the stolen cryptocurrency, and even admitted to the original 2016 Bitfinex hack.",
-    url: "https://www.businessinsider.com/crypto-couple-husband-admits-to-bitfinex-hack-at-plea-hearing-2023-8",
-    urlToImage:
-      "https://i.insider.com/620467843b86990018b2a8cb?width=1200&format=jpeg",
-    publishedAt: "2023-08-03T17:41:50Z",
-    content:
-      "Ilya Lichtenstein pleaded guilty on Thursday to a $4.5 billion bitcoin-laundering scheme in which they plotted to sell cryptocurrency stolen during the 2016 hack of Bitfinex.\r\nLichtenstein, a Russian… [+2239 chars]",
+      "GameStop has announced that it'll be removing its iOS and Chrome extension crypto wallets from the market on November 1. This decision was due to regulatory uncertainty in the crypto space.",
+    about: [
+      {
+        _type: "Thing",
+        readLink:
+          "https://api.cognitive.microsoft.com/api/v7/entities/fe6b61fa-d430-27c6-fb01-7111acf6037a",
+        name: "GameStop",
+      },
+    ],
+    provider: [
+      {
+        _type: "Organization",
+        name: "GameSpot",
+        image: {
+          _type: "ImageObject",
+          thumbnail: {
+            _type: "ImageObject",
+            contentUrl:
+              "https://www.bing.com/th?id=ODF.5V7DlNAYcY6rugNa1gU_gg&pid=news",
+          },
+        },
+      },
+    ],
+    datePublished: "2023-08-04T15:55:00.0000000Z",
+    ampUrl:
+      "https://www.gamespot.com/amp-articles/gamestop-gives-up-on-crypto-after-one-year/1100-6516582/",
   },
   {
-    source: {
-      id: "business-insider",
-      name: "Business Insider",
+    _type: "NewsArticle",
+    name: "SEC Pursues Restraining Order Against Crypto Miner That Defrauded Investors Out of $50 Million",
+    url: "https://www.msn.com/en-us/money/other/sec-pursues-restraining-order-against-crypto-miner-that-defrauded-investors-out-of-50-million/ar-AA1eMBSg",
+    image: {
+      _type: "ImageObject",
+      thumbnail: {
+        _type: "ImageObject",
+        contentUrl:
+          "https://www.bing.com/th?id=OVFT.a-5wlUAVBa9SPOimbozTEC&pid=News",
+        width: 700,
+        height: 448,
+      },
     },
-    author: "Filip De Mott",
-    title:
-      "Bitcoin was the only cryptocurrency the SEC asked Coinbase not to delist, CEO says",
     description:
-      "The Securities and Exchange Commission asked Coinbase to delist virtually all its crypto assets, CEO Brian Armstrong told the Financial Times.",
-    url: "https://markets.businessinsider.com/news/currencies/bitcoin-crypto-token-sec-coinbase-delist-gary-gensler-brian-armstrong-2023-7",
-    urlToImage:
-      "https://i.insider.com/64c7bbb4cf077800196788c7?width=1200&format=jpeg",
-    publishedAt: "2023-07-31T15:16:39Z",
-    content:
-      "Coinbase CEO Brian Armstrong.Patrick Fallon/Getty Images\r\n<ul>\n<li>The Securities and Exchange Commission asked Coinbase to delist over 200 crypto assets, CEO Brian Armstrong said.</li>\n<li>He told t… [+2601 chars]",
+      "On Thursday, the U.S. Securities and Exchange Commission declared that a crypto mining company known as DEBT Box raised $50 million through a fraudulent scheme, along with an unknown amount of Bitcoin and Ethereum. The SEC said that the company misappropriated funds for luxury cars and real estate, “showering their friends with cash.”",
+    about: [
+      {
+        _type: "Thing",
+        readLink:
+          "https://api.cognitive.microsoft.com/api/v7/entities/f22dcfec-967f-8b63-7090-4ca7bf2b6d0c",
+        name: "U.S. Securities and Exchange Commission",
+      },
+      {
+        _type: "Thing",
+        readLink:
+          "https://api.cognitive.microsoft.com/api/v7/entities/f29b4b62-347d-f4ec-17b0-b19bbfefd72f",
+        name: "Restraining order",
+      },
+      {
+        _type: "Thing",
+        readLink:
+          "https://api.cognitive.microsoft.com/api/v7/entities/6689e728-dbff-1853-aeb3-2870fca9bf0c",
+        name: "Advice",
+      },
+    ],
+    mentions: [
+      {
+        _type: "Thing",
+        name: "U.S. Securities and Exchange Commission",
+      },
+      {
+        _type: "Thing",
+        name: "Restraining order",
+      },
+      {
+        _type: "Thing",
+        name: "Advice",
+      },
+    ],
+    provider: [
+      {
+        _type: "Organization",
+        name: "TheStreet.com on MSN.com",
+        image: {
+          _type: "ImageObject",
+          thumbnail: {
+            _type: "ImageObject",
+            contentUrl:
+              "https://www.bing.com/th?id=ODF.dsVvdYEiGuqZDGlCaqu-ZQ&pid=news",
+          },
+        },
+      },
+    ],
+    datePublished: "2023-08-04T16:13:00.0000000Z",
+    category: "Business",
   },
   {
-    source: {
-      id: "business-insider",
-      name: "Business Insider",
+    _type: "NewsArticle",
+    name: "'Futurama' goes west for crypto in 2 new clips",
+    url: "https://www.msn.com/en-us/tv/news/futurama-goes-west-for-crypto-in-2-new-clips/ar-AA1eNRk7",
+    image: {
+      _type: "ImageObject",
+      thumbnail: {
+        _type: "ImageObject",
+        contentUrl:
+          "https://www.bing.com/th?id=OVFT.HdklhVWoJVlxUOToaFWlzi&pid=News",
+        width: 640,
+        height: 480,
+      },
     },
-    author: "Joseph Wilkins",
-    title:
-      "China is Binance's biggest market despite its ban on cryptocurrency trading, report says",
     description:
-      "Crypto assets worth $90 billion were traded on Binance in China in May, The Wall Street Journal reported.",
-    url: "https://markets.businessinsider.com/news/currencies/binance-china-biggest-market-despite-crypto-ban-report-2023-8",
-    urlToImage:
-      "https://i.insider.com/64ca318cce69770019841ef1?width=1200&format=jpeg",
-    publishedAt: "2023-08-02T12:14:20Z",
-    content:
-      "Binance has about a million active accounts in China, a report says.NurPhoto\r\n<ul>\n<li>Binance is looking to new markets following an SEC lawsuit in June.</li>\n<li>Tokens worth $90 billion were trade… [+2183 chars]",
+      'Hulu released two clips from the next episode of Futurama, "How the West Was 1010001." The third episode of the Hulu revival premieres Monday. In the episode, the Planet Express gang visit Doge City,',
+    about: [
+      {
+        _type: "Thing",
+        readLink:
+          "https://api.cognitive.microsoft.com/api/v7/entities/f8233288-24de-9f91-2053-b809cb8f7e43",
+        name: "Futurama",
+      },
+    ],
+    mentions: [
+      {
+        _type: "Thing",
+        name: "Futurama",
+      },
+      {
+        _type: "Thing",
+        name: "Leela",
+      },
+      {
+        _type: "Thing",
+        name: "Billy West",
+      },
+    ],
+    provider: [
+      {
+        _type: "Organization",
+        name: " UPI News on MSN.com",
+        image: {
+          _type: "ImageObject",
+          thumbnail: {
+            _type: "ImageObject",
+            contentUrl:
+              "https://www.bing.com/th?id=ODF.cpo3ek4OYDsinkv1bzpa2Q&pid=news",
+          },
+        },
+      },
+    ],
+    datePublished: "2023-08-04T18:28:51.0000000Z",
+    category: "Entertainment",
   },
   {
-    source: {
-      id: "business-insider",
-      name: "Business Insider",
+    _type: "NewsArticle",
+    name: "'Bitcoin Bonnie and Clyde' Plead Guilty to Billion Dollar Crypto Laundering Scheme",
+    url: "https://news.yahoo.com/bitcoin-bonnie-clyde-plead-guilty-151000821.html",
+    image: {
+      _type: "ImageObject",
+      thumbnail: {
+        _type: "ImageObject",
+        contentUrl:
+          "https://www.bing.com/th?id=OVFT.4KxDr0JIRmQuSANrymEuRi&pid=News",
+        width: 636,
+        height: 357,
+      },
     },
-    author: "George Glover",
-    title: "BlackRock wants to launch a bitcoin ETF. Why now?",
     description:
-      "BlackRock's CEO talked up bitcoin last week, with the asset management giant in the process of launching a fund that tracks the cryptocurrency.",
-    url: "https://markets.businessinsider.com/news/currencies/bitcoin-crypto-blackrock-larry-fink-wall-street-love-hate-relationship-2023-7",
-    urlToImage:
-      "https://i.insider.com/64abe0fe6d7e02001af89dfe?width=1200&format=jpeg",
-    publishedAt: "2023-07-10T14:02:18Z",
-    content:
-      'BlackRock CEO Larry Fink.AP\r\n<ul>\n<li>BlackRock\'s CEO talked up bitcoin last week, with the asset manager trying to launch a fund that tracks it.</li>\n<li>Cryptocurrencies could "revolutionize" finan… [+2268 chars]',
+      "Heather Morgan, a.k.a. Razzlekhan, and her husband pleaded guilty to orchestrating a massive money laundering scheme. Morgan and Ilya Lichtenstein became known as the modern-day “Bitcoin Bonnie and Clyde” after they were linked to the 2016 theft of $4.",
+    about: [
+      {
+        _type: "Thing",
+        readLink:
+          "https://api.cognitive.microsoft.com/api/v7/entities/efe779e3-30e7-520d-9d8d-279fac2b89da",
+        name: "Guilty",
+      },
+      {
+        _type: "Thing",
+        readLink:
+          "https://api.cognitive.microsoft.com/api/v7/entities/2d95ee9c-a8a0-d6fa-69b7-f6d996f0c946",
+        name: "Bitcoin",
+      },
+    ],
+    provider: [
+      {
+        _type: "Organization",
+        name: "YAHOO!News",
+        image: {
+          _type: "ImageObject",
+          thumbnail: {
+            _type: "ImageObject",
+            contentUrl:
+              "https://www.bing.com/th?id=ODF.nYADEgS75l8rdCg9D-p_OQ&pid=news",
+          },
+        },
+      },
+    ],
+    datePublished: "2023-08-04T15:09:00.0000000Z",
+    category: "ScienceAndTechnology",
+    ampUrl:
+      "https://news.yahoo.com/amphtml/bitcoin-bonnie-clyde-plead-guilty-151000821.html",
   },
 ];

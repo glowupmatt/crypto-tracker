@@ -1,39 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { broadCryptoNews } from "../fetchApi/newsFetch";
+import { previewDataFeed } from "../mockData/newsFeed";
+import { singleFeedType, NewsType } from "../mockData/singleNewsFeedType";
 import NewsCard from "./NewsCard";
 import Link from "next/link";
 
 type Props = {};
 
-type NewsType = {
-  status: string;
-  totalResults: number;
-  articles: {
-    source: {
-      id: string | null;
-      name: string | null;
-    };
-    author: string | null;
-    title: string | null;
-    description: string;
-    url: string;
-    urlToImage: string | null;
-    publishedAt: string | null;
-    content: string | null;
-  }[];
-};
-
 const NewsFeedPreviewSlide = (props: Props) => {
-  const [newsFeed, setNewsFeed] = useState<NewsType | undefined>();
-  useEffect(() => {
-    broadCryptoNews("cryptocurrency", 10).then((data) => setNewsFeed(data));
-  }, []);
+  // const [newsFeed, setNewsFeed] = useState<NewsType[]>();
+  // useEffect(() => {
+  //   broadCryptoNews().then((data) => setNewsFeed(data));
+  // }, []);
 
-  //   const newsFeed = previewDataFeed;
+  const newsFeed: NewsType[] = previewDataFeed;
 
-  if (newsFeed !== undefined && newsFeed.articles) {
-    const slicedFeed = newsFeed.articles.slice(3);
-    console.log(slicedFeed);
+  if (newsFeed !== undefined) {
+    const slicedFeed: NewsType[] = newsFeed
+      .filter((data) => data.description)
+      .slice(4);
 
     return (
       <div className="bg-slate-200 rounded-md flex flex-col gap-2 justify-center items-center py-4">
@@ -45,7 +30,7 @@ const NewsFeedPreviewSlide = (props: Props) => {
             news site.
           </p>
         </div>
-        {slicedFeed.map((data, index) => {
+        {slicedFeed.map((data: NewsType, index) => {
           return (
             <Link
               href={data.url}

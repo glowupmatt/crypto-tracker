@@ -1,42 +1,34 @@
 /* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import React from "react";
+import { NewsType } from "../mockData/singleNewsFeedType";
 
 type Props = {
-  data: {
-    source: {
-      id: string | null;
-      name: string | null;
-    };
-    author: string | null;
-    title: string | null;
-    description: string;
-    url: string | null;
-    urlToImage: string | null;
-    publishedAt: string | null;
-    content: string | null;
-  };
+  data: NewsType;
 };
 
 const NewsCard = (props: Props) => {
   const { data } = props;
+
   return (
     <div className="flex justify-center items-center">
-      {data.urlToImage && data.title ? (
-        <div className="bg-white p-4 w-[90%] rounded-lg flex gap-4 flex-col">
-          <img
-            alt={data.title}
-            src={data.urlToImage}
-            className="w-full h-full"
-          />
-          <p className="font-bold flex flex-col gap-2 text-[.8rem]">
-            {data.title.substring(0, 100)}
-            <span className="text-[.5rem] text-right">
-              ... Click for article
-            </span>
-          </p>
-          <hr />
-          <p className="text-[.7rem]">{data.description}</p>
+      {data.image && data.category ? (
+        <div className="bg-white p-4 w-[90%] rounded-lg flex gap-4 flex-row">
+          <div className="w-[7rem] h-full flex flex-col gap-[1rem]">
+            <img
+              alt={data.name}
+              src={data.image.thumbnail.contentUrl}
+              className="w-[5rem] h-[5rem]"
+            />
+            <p className="font-bold flex flex-col gap-2 text-[.8rem]">
+              {data.category}
+              <span className="text-[.5rem] text-start">
+                ... Click for article
+              </span>
+            </p>
+          </div>
+
+          <p className="text-[.7rem] w-[9rem]">{data.name.substring(0, 100)}</p>
         </div>
       ) : null}
     </div>

@@ -1,22 +1,26 @@
 import axios from "axios";
 
-const baseURL = "https://newsapi.org/v2/everything";
-
 const options = {
-  url: baseURL,
+  method: "GET",
+  url: "https://bing-news-search1.p.rapidapi.com/news/search",
   params: {
-    q: "Cryptocurrency",
+    q: "crypto",
+    freshness: "Day",
+    textFormat: "Raw",
+    safeSearch: "Off",
   },
-  "X-Api-Key": "704498f5f332417f8f959c0aed695b2d",
+  headers: {
+    "X-BingApis-SDK": "true",
+    "X-RapidAPI-Key": process.env.NEXT_PUBLIC_NEWS_API,
+    "X-RapidAPI-Host": "bing-news-search1.p.rapidapi.com",
+  },
 };
 
-export const broadCryptoNews = async (queries: string, pageSize: number) => {
+export const broadCryptoNews = async () => {
   try {
-    const { data } = await axios.get(
-      `${baseURL}?q=${queries}&searchIn=title,description&pageSize=${pageSize}&apiKey=${options["X-Api-Key"]}`
-    );
-    return data;
-  } catch (err) {
-    console.error("Error: ", err);
+    const response = await axios.request(options);
+    return response.data.value;
+  } catch (error) {
+    console.error(error);
   }
 };
