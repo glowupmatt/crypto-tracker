@@ -8,12 +8,12 @@ import Link from "next/link";
 type Props = {};
 
 const NewsFeedPreviewSlide = (props: Props) => {
-  // const [newsFeed, setNewsFeed] = useState<NewsType[]>();
-  // useEffect(() => {
-  //   broadCryptoNews().then((data) => setNewsFeed(data));
-  // }, []);
+  const [newsFeed, setNewsFeed] = useState<NewsType[]>();
+  useEffect(() => {
+    broadCryptoNews().then((data) => setNewsFeed(data));
+  }, []);
 
-  const newsFeed: NewsType[] = previewDataFeed;
+  // const newsFeed: NewsType[] = previewDataFeed;
 
   if (newsFeed !== undefined) {
     const slicedFeed: NewsType[] = newsFeed
