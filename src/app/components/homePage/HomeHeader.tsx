@@ -5,7 +5,7 @@ type Props = {};
 
 function HomeHeader({}: Props) {
   return (
-    <div className="bg-gray-300 p-4 rounded-lg shadow-lg">
+    <div className="bg-gray-300 p-4 rounded-lg shadow-lg md:flex md:flex-row-reverse md:p-[3rem]">
       <div className="p-8">
         <div className="relative flex justify-center items-center">
           <div className="absolute w-[100%] h-[100%] z-[1]">
@@ -23,7 +23,7 @@ function HomeHeader({}: Props) {
           <h2 className="text-[1.5rem] font-bold">Track Your Crypto</h2>
           <h2 className="text-blue-700 font-bold text-[1.5rem]">Instantly</h2>
         </div>
-        <p className="text-[.8rem]">
+        <p className="text-[.8rem] lg:w-[60%]">
           Empowering crypto enthusiasts to monitor their digital assets,
           investments, and market data seamlessly with our all-in-one crypto
           tracker platform

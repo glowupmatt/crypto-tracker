@@ -63,24 +63,22 @@ export type CoinType = {
 }[];
 
 export default function Home() {
-  // const [cryptoData, setCryptoData] = useState<CryptoDataType>();
-  const CryptoObj: CoinType | any = data.data.coins;
-  // useEffect(() => {
-  //   fetchAllCrypto().then((data) => setCryptoData(data.data.coins));
-  // }, []);
+  const [CryptoObj, setCryptoObj] = useState<CoinType | undefined>();
+  // const CryptoObj: CoinType | any = data.data.coins;
+  useEffect(() => {
+    fetchAllCrypto().then((data) => setCryptoObj(data.data.coins));
+  }, []);
 
   return (
-    <div className="overflow-hidden">
-      <div className="z-10 relative">
-        <Header />
+    <div className="lg:flex lg:justify-center">
+      <div className="overflow-hidden lg:max-w-[70rem]">
+        <div className="p-2 flex flex-col gap-8">
+          <HomeHeader />
+          <CryptoPreviewSection CryptoObj={CryptoObj} />
+          <CrytpoConverter CryptoObj={CryptoObj} />
+          <NewsFeedPreviewSlide />
+        </div>
       </div>
-      <div className="p-2 flex flex-col gap-8">
-        <HomeHeader />
-        <CryptoPreviewSection />
-        <CrytpoConverter CryptoObj={CryptoObj} />
-        <NewsFeedPreviewSlide />
-      </div>
-      <Footer />
     </div>
   );
 }

@@ -7,7 +7,7 @@ import CryptoSwapInput from "./CryptoSwapInput";
 import { CoinType } from "../page";
 
 type Props = {
-  CryptoObj: CoinType;
+  CryptoObj: CoinType | undefined;
 };
 
 const CrytpoConverter = (props: Props) => {
@@ -15,8 +15,8 @@ const CrytpoConverter = (props: Props) => {
 
   if (CryptoObj) {
     return (
-      <div className="bg-white h-[30rem] shadow-lg flex flex-col items-center justify-center py-8 gap-8">
-        <div className="flex flex-col items-center justify-center text-center bg-gray-300 p-4 rounded-lg w-[90%] shadow-md">
+      <div className="bg-white h-[30rem] shadow-lg flex flex-col items-center justify-center py-8 gap-8 md:flex-row md:p-4">
+        <div className="flex flex-col items-center justify-center text-center bg-gray-300 p-4 rounded-lg w-[90%] shadow-md md:h-full">
           <h2 className="font-bold text-[1rem] mb-1">Easy Conversion</h2>
           <div className="flex items-center justify-center w-full mb-4">
             <CurrencyExchangeIcon sx={{ width: 30, height: 30 }} />

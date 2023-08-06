@@ -13,37 +13,37 @@ const NewsFeedPreviewSlide = (props: Props) => {
     broadCryptoNews().then((data) => setNewsFeed(data));
   }, []);
 
-  console.log(newsFeed);
-
   // const newsFeed: NewsType[] = previewDataFeed;
 
   if (newsFeed !== undefined) {
-    const slicedFeed: NewsType[] = newsFeed
-      .filter((data) => data.description)
-      .slice(4);
+    const slicedFeed: NewsType[] = newsFeed.filter((data) => data.image);
 
     return (
-      <div className="bg-slate-200 rounded-md flex flex-col gap-2 justify-center items-center py-4">
-        <div className="flex justify-center items-center flex-col gap-3">
-          <h2 className="font-bold text-[1.5rem]">Crypto News</h2>
-          <p className="text-[.8rem] w-[90%] text-center">
+      <div className="bg-slate-200 rounded-md flex flex-col gap-2 justify-center items-center py-4  md:h-full md:p-4">
+        <div className="flex justify-center items-center flex-col gap-3 md:bg-gray-300  md:h-[25rem] md:rounded-xl md:w-full">
+          <h2 className="font-bold text-[1.5rem] md:text-[2rem]">
+            Crypto News
+          </h2>
+          <p className="text-[.8rem] w-[90%] text-center md:w-[50%]">
             Stay up-to-date with the latest developments and trends in the
             cryptocurrency world through our comprehensive and reliable crypto
             news site.
           </p>
         </div>
-        {slicedFeed.map((data: NewsType, index) => {
-          return (
-            <Link
-              href={data.url}
-              key={index}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <NewsCard data={data} />
-            </Link>
-          );
-        })}
+        <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
+          {slicedFeed.map((data: NewsType, index) => {
+            return (
+              <Link
+                href={data.url}
+                key={index}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <NewsCard data={data} />
+              </Link>
+            );
+          })}
+        </div>
       </div>
     );
   } else {

@@ -73,7 +73,7 @@ const CryptoDropdownOne = (props: Props) => {
               return (
                 <NavigationMenuLink
                   key={index}
-                  className="p-[1rem] w-[90%] flex justify-evenly items-center gap-[1rem] bg-slate-200 rounded"
+                  className="p-[1rem] w-[90%] flex justify-evenly items-center gap-[1rem] bg-slate-200 rounded md:w-[7rem]"
                   onClick={onClickHandler}
                 >
                   <p className="text-[.8rem]">{coin.symbol}</p>

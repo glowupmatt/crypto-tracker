@@ -4,10 +4,11 @@ const options = {
   method: "GET",
   url: "https://bing-news-search1.p.rapidapi.com/news/search",
   params: {
-    q: "crypto",
+    q: "cryptocurrency",
     freshness: "Day",
     textFormat: "Raw",
     safeSearch: "Off",
+    originalImg: "true",
   },
   headers: {
     "X-BingApis-SDK": "true",

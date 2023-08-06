@@ -89,7 +89,7 @@ const CryptoSwapInput = (props: Props) => {
   return (
     <div className="flex flex-col items-center w-[90%] justify-between">
       <div className="w-full p-4 border-solid border-2 border-slate-200 rounded-xl flex relative z-[10] justify-between">
-        <div className="">
+        <div className="md:w-full">
           <p className="text-[.6rem] text-gray-400">Amount</p>
           <input
             className="w-full"
