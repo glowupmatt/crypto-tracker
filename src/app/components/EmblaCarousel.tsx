@@ -5,24 +5,26 @@ import "../emblaStyles/cardCarousel.css";
 import Autoplay from "embla-carousel-autoplay";
 
 type Props = {
-  graphPriceData: {
-    uuid: string;
-    symbol: string;
-    name: string;
-    color: string;
-    iconUrl: string;
-    marketCap: string;
-    price: string;
-    listedAt: number;
-    tier: number;
-    change: string;
-    rank: number;
-    sparkline: string[];
-    lowVolume: boolean;
-    coinrankingUrl: string;
-    "24hVolume": string;
-    btcPrice: string;
-  }[];
+  graphPriceData:
+    | {
+        uuid: string;
+        symbol: string;
+        name: string;
+        color: string;
+        iconUrl: string;
+        marketCap: string;
+        price: string;
+        listedAt: number;
+        tier: number;
+        change: string;
+        rank: number;
+        sparkline: string[];
+        lowVolume: boolean;
+        coinrankingUrl: string;
+        "24hVolume": string;
+        btcPrice: string;
+      }[]
+    | any[];
 };
 
 const EmblaCarousel = (props: Props) => {

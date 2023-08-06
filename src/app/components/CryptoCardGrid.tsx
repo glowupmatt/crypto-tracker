@@ -20,12 +20,13 @@ type Props = {
     "24hVolume": string;
     btcPrice: string;
   }[];
+  cryptoCardStyles: string;
 };
 
 function CryptoCardGrid(props: Props) {
-  const { graphPriceData } = props;
+  const { graphPriceData, cryptoCardStyles } = props;
   return (
-    <div className="grid grid-cols-2 gap-4 p-4 justify-items-center">
+    <div className={cryptoCardStyles}>
       {graphPriceData.map((data, index) => {
         return (
           <div

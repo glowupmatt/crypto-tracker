@@ -16,8 +16,9 @@ const NewsFeedPreviewSlide = (props: Props) => {
   // const newsFeed: NewsType[] = previewDataFeed;
 
   if (newsFeed !== undefined) {
-    const slicedFeed: NewsType[] = newsFeed.filter((data) => data.image);
-
+    const slicedFeed: NewsType[] = newsFeed
+      .filter((data) => data.image)
+      .slice(0, 5);
     return (
       <div className="bg-slate-200 rounded-md flex flex-col gap-2 justify-center items-center py-4  md:h-full md:p-4">
         <div className="flex justify-center items-center flex-col gap-3 md:bg-gray-300  md:h-[25rem] md:rounded-xl md:w-full">

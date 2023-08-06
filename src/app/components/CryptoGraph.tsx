@@ -45,7 +45,8 @@ const CryptoGraph = (props: Props) => {
   // Price Data for chart
   const info = data.sparkline;
   // crypto price Data
-  const price = Math.ceil(+data.price).toLocaleString("en-US");
+  const price = parseFloat(data.price).toFixed(2);
+  const priceToNumber = (+price).toLocaleString("en-US");
   // Positive Percentage Change
   const trending = data.change;
   // Negative Percentage Change
@@ -110,7 +111,7 @@ const CryptoGraph = (props: Props) => {
       </div>
       <div className="flex justify-between items-center gap-[.5rem] w-[100%] ">
         <div className="flex items-center gap-2 ">
-          <p className="text-[1rem] font-bold">${price}.00</p>
+          <p className="text-[1rem] font-bold">${priceToNumber}</p>
           <div className="flex">
             <p
               className={classNames("text-[10px]", {

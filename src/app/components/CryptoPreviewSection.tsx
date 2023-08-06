@@ -14,6 +14,7 @@ type Props = {
 
 const CryptoPreviewSection = (props: Props) => {
   const { CryptoObj } = props;
+  const cryptoCardStyles = "grid grid-cols-2 gap-4 p-4 justify-items-center";
 
   if (CryptoObj) {
     let graphPriceData = CryptoObj.map((coin) => {
@@ -29,7 +30,10 @@ const CryptoPreviewSection = (props: Props) => {
           <h3 className="text-[1.2rem] font-bold">Up To Date Crypto Prices</h3>
         </div>
         <div className="hidden md:block">
-          <CryptoCardGrid graphPriceData={graphPriceData} />
+          <CryptoCardGrid
+            graphPriceData={graphPriceData}
+            cryptoCardStyles={cryptoCardStyles}
+          />
         </div>
         <div className="flex flex-col gap-3 bg-white justify-end md:hidden">
           <EmblaCarousel graphPriceData={graphPriceData} />
