@@ -9,6 +9,7 @@ import { graphPriceData } from "../mockData/CryptoObjMockData";
 import CoinListing from "../components/CoinListing";
 import { coinObjType } from "../mockData/CryptoObjMockData";
 import classNames from "classnames";
+import CoinListingDesktop from "../components/CoinListingDesktop";
 
 type Props = {};
 
@@ -52,13 +53,24 @@ const Market = (props: Props) => {
           </div>
           <EmblaCarousel graphPriceData={graphPriceData} />
         </div>
-        <div>
+        <div className="md:hidden">
           {graphPriceData
             .filter((data, index) => index <= showIndex)
             .map((data: coinObjType | any, index) => {
               return (
                 <div key={index}>
                   <CoinListing data={data} />
+                </div>
+              );
+            })}
+        </div>
+        <div className="hidden md:flex flex-col">
+          {graphPriceData
+            .filter((data, index) => index <= showIndex)
+            .map((data: coinObjType | any, index) => {
+              return (
+                <div key={index}>
+                  <CoinListingDesktop data={data} />
                 </div>
               );
             })}
