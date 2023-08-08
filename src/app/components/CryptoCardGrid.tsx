@@ -6,7 +6,7 @@ type Props = {
     uuid: string;
     symbol: string;
     name: string;
-    color: string;
+    color: string | null;
     iconUrl: string;
     marketCap: string;
     price: string;
@@ -25,6 +25,13 @@ type Props = {
 
 function CryptoCardGrid(props: Props) {
   const { graphPriceData, cryptoCardStyles } = props;
+
+  const filteredGraphPriceData = graphPriceData
+    .sort((highest, lowest) => +highest.price + +lowest.price)
+    .filter((data, index) => index <= 2);
+
+  // console.log(filteredGraphPriceData);
+
   return (
     <div className={cryptoCardStyles}>
       {graphPriceData.map((data, index) => {

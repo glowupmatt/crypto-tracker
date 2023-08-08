@@ -1,10 +1,14 @@
-import React from "react";
+"use client";
+
+import React, { MouseEvent, MouseEventHandler, useEffect } from "react";
 import Image from "next/image";
 import { coinObjType } from "../mockData/CryptoObjMockData";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 import classNames from "classnames";
 import { green, red } from "@mui/material/colors";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 type Props = {
   data: coinObjType;
@@ -12,12 +16,23 @@ type Props = {
 
 const CoinListing = (props: Props) => {
   const { data } = props;
+
   const trending = data.change;
   // Negative Percentage Change
   const negativeTrend = trending.includes("-");
   const price = parseFloat(data.price).toFixed(2);
+  const pathName = usePathname();
+  const router = useRouter();
+  useEffect(() => {
+    const url = `${pathName}`;
+    console.log(url);
+  }, [pathName]);
+
+  const onClickHandler = () => {
+    router.push(`/market/${data.uuid}`);
+  };
   return (
-    <div className="flex justify-between p-4">
+    <div className="flex justify-between p-4" onClick={onClickHandler}>
       <div className="flex justify-center items-center gap-2 w-[4rem]">
         <p>{data.rank}</p>
         <Image alt="" src={data.iconUrl} width={30} height={30} />

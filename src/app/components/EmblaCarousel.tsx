@@ -45,10 +45,14 @@ const EmblaCarousel = (props: Props) => {
     }
   }, [emblaApi]);
 
+  const filteredGraphPriceData = graphPriceData
+    .sort((highest, lowest) => +highest.price + +lowest.price)
+    .filter((data, index) => index <= 4);
+
   return (
     <div className="embla p-[1rem]" ref={emblaRef}>
-      <div className="embla__container">
-        {graphPriceData.map((data, index) => {
+      <div className="embla__container lg:pr-[7rem] lg:pl-[27rem]">
+        {filteredGraphPriceData.map((data, index) => {
           return (
             <div
               key={index}

@@ -23,7 +23,7 @@ type Props = {
     uuid: string;
     symbol: string;
     name: string;
-    color: string;
+    color: string | null;
     iconUrl: string;
     marketCap: string;
     price: string;

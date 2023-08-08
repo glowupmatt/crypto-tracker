@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const baseURL = "https://api.coinranking.com/v2/coins";
+const BASE_URL = "https://api.coinranking.com/v2/coins";
 
 const options = {
-  url: baseURL,
+  url: BASE_URL,
   params: {
     orderBy: "marketCap",
     limit: "4",
@@ -38,5 +38,23 @@ export const fetchAllCrypto = async () => {
     return data;
   } catch (err) {
     console.error("Error: ", err);
+  }
+};
+
+const individualCoinOptions = {
+  headers: {
+    "x-access-token": process.env.NEXT_PUBLIC_CRYPTO_API,
+  },
+};
+
+export const fetchCoin = async (id: string) => {
+  try {
+    const { data } = await axios.get(
+      `https://api.coinranking.com/v2/coin/${id}`,
+      options
+    );
+    return data;
+  } catch (err) {
+    console.error(err);
   }
 };

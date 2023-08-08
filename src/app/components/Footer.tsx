@@ -8,8 +8,8 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <footer className="flex flex-col items-center justify-center md:p-[.5rem]">
-      <div className="flex flex-row items-center gap-3 bg-gray-300 rounded-lg w-[95%] relative overflow-hidden p-4 md:w-full md:h-[13rem]">
+    <footer className="flex flex-col items-center justify-center p-[.5rem]">
+      <div className="flex flex-row items-center gap-3 bg-gray-300 rounded-lg relative overflow-hidden p-8 w-full md:h-[13rem]max-w-[75rem] ">
         <PublicIcon className="absolute w-full h-[10rem] top-[-1.75rem] left-[6rem] fill-slate-400 md:hidden" />
         <div className="w-full justify-center items-center z-10">
           <h1 className="text-center z-10">Crypto Planet</h1>

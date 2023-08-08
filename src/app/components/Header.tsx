@@ -16,9 +16,9 @@ const Header = (props: Props) => {
     setNavOpen((prev) => !prev);
   };
   return (
-    <nav className="relative z-50 md:flex justify-center items-center">
-      <div className="flex w-full justify-between relative p-4 lg:max-w-[70rem]">
-        <h1>CRYPTO PLANET</h1>
+    <nav className="relative z-50 md:flex justify-center items-center bg-slate-200">
+      <div className="flex w-full justify-between relative p-8 max-w-[75rem] ">
+        <Link href={"/"}>CRYPTO PLANET</Link>
         <div className="relative z-10 md:hidden">
           {!navOpen ? (
             <MenuIcon sx={{ color: grey[900] }} onClick={openNav} />
@@ -27,10 +27,18 @@ const Header = (props: Props) => {
           )}
         </div>
         <div className="w-[40%] hidden md:flex justify-between items-center">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/market"}>Market</Link>
-          <Link href={"/"}>Convert</Link>
-          <Link href={"/"}>News</Link>
+          <Link onClick={() => setNavOpen(false)} href={"/"}>
+            Home
+          </Link>
+          <Link onClick={() => setNavOpen(false)} href={"/market"}>
+            Market
+          </Link>
+          <Link onClick={() => setNavOpen(false)} href={"/"}>
+            Convert
+          </Link>
+          <Link onClick={() => setNavOpen(false)} href={"/"}>
+            News
+          </Link>
         </div>
       </div>
       {/* prettier-ignore */}
@@ -40,10 +48,10 @@ const Header = (props: Props) => {
           { "hidden": !navOpen }
         )}
       >
-        <Link href={"/"}>Home</Link>   
-        <Link href={"/"}>Market</Link>
-        <Link href={"/"}>Convert</Link>
-        <Link href={"/"}>News</Link>
+        <Link onClick={() => setNavOpen(false)} href={"/"}>Home</Link>   
+        <Link onClick={() => setNavOpen(false)} href={"/market"}>Market</Link>
+        <Link onClick={() => setNavOpen(false)} href={"/"}>Convert</Link>
+        <Link onClick={() => setNavOpen(false)} href={"/"}>News</Link>
       </div>
     </nav>
   );
