@@ -65,20 +65,16 @@ const SelectedCryptoToUSD = (props: Props) => {
       }
     });
 
-    const result = date.map((data) => {
-      if (data) {
-        return data?.toLocaleTimeString("en-US");
-      }
-    });
+    const todaysDate = new Date().toLocaleDateString("en-US");
 
-    result.filter((data, index) => {
-      if (index % 5) {
-        return data;
-      }
+    const result = date.filter((data) => {
+      data?.toLocaleDateString("en-US") === todaysDate;
+      return data?.toLocaleTimeString("en-US");
     });
+    const finalResult = result.map((data) => data?.toLocaleTimeString("en-US"));
 
     const chartData = {
-      labels: result,
+      labels: finalResult,
       datasets: [
         {
           data: priceData,
@@ -88,6 +84,7 @@ const SelectedCryptoToUSD = (props: Props) => {
           pointHoverBackgroundColor: "white",
           pointHoverBorderColor: "white",
           pointBorderWidth: 10,
+          order: 0,
         },
       ],
     };
@@ -102,7 +99,8 @@ const SelectedCryptoToUSD = (props: Props) => {
             drawBorder: false,
             display: false,
           },
-          position: "left" as const,
+          position: "right" as const,
+          reverse: true,
         },
         x: {
           display: true,
@@ -122,7 +120,7 @@ const SelectedCryptoToUSD = (props: Props) => {
     };
 
     return (
-      <div className="border-solid border-[2px] border-gray w-full h-[15rem]">
+      <div className="border-solid border-[2px] border-gray w-full h-[20rem]">
         <Line options={options} data={chartData} />
       </div>
     );

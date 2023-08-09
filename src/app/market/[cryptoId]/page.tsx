@@ -72,52 +72,57 @@ function CoinGraph(props: Props) {
     return (
       <div className="flex flex-col justify-center items-center bg-slate-200 p-4 gap-4">
         <div className="w-full bg-white p-4 rounded-lg">
-          <div className="flex flex-col gap-8">
-            <h2 className="text-[1rem] font-bold">Market Stats</h2>
-            <div className="flex gap-4">
-              <Image
-                src={coin?.iconUrl}
-                alt={coin?.name}
-                width={50}
-                height={50}
-              />
-              <div className="flex flex-col">
-                <p>{coin?.name}</p>
-                <p className="text-blue-700">{coin?.symbol}</p>
+          <div className="grid grid-cols-2 items-center gap-4">
+            <div className="flex flex-col gap-8">
+              <h2 className="text-[1rem] font-bold">Market Stats</h2>
+              <div className="flex gap-4">
+                <Image
+                  src={coin?.iconUrl}
+                  alt={coin?.name}
+                  width={50}
+                  height={50}
+                />
+                <div className="flex flex-col">
+                  <p>{coin?.name}</p>
+                  <p className="text-blue-700">{coin?.symbol}</p>
+                </div>
               </div>
-            </div>
-            <div className="flex gap-4 text-[.8rem] justify-start items-center">
-              <p className="p-2 bg-slate-200 text-black rounded-md">
-                Rank #{coin?.rank}
-              </p>
-              <p>{coin?.tags[0]}</p>
-            </div>
-            <div className="flex gap-4">
-              <p>${(+price).toLocaleString("en-US")}</p>
-              <div className="flex w-[5rem] justify-start items-center">
-                <p
-                  className={classNames(
-                    "text-[10px]",
-                    {
-                      "text-red-600": negativeTrend === true,
-                    },
-                    {
-                      "text-green-600": negativeTrend === false,
-                    }
-                  )}
-                >
-                  {coin?.change}%
+              <div className="flex gap-4 text-[.8rem] justify-start items-center">
+                <p className="p-2 bg-slate-200 text-black rounded-md">
+                  Rank #{coin?.rank}
                 </p>
-                {negativeTrend ? (
-                  <TrendingDownIcon
-                    sx={{ color: red[600], width: 20, height: 20 }}
-                  />
-                ) : (
-                  <TrendingUpIcon
-                    sx={{ color: green[600], width: 20, height: 20 }}
-                  />
-                )}
+                <p>{coin?.tags[0]}</p>
               </div>
+              <div className="flex gap-4">
+                <p>${(+price).toLocaleString("en-US")}</p>
+                <div className="flex w-[5rem] justify-start items-center">
+                  <p
+                    className={classNames(
+                      "text-[10px]",
+                      {
+                        "text-red-600": negativeTrend === true,
+                      },
+                      {
+                        "text-green-600": negativeTrend === false,
+                      }
+                    )}
+                  >
+                    {coin?.change}%
+                  </p>
+                  {negativeTrend ? (
+                    <TrendingDownIcon
+                      sx={{ color: red[600], width: 20, height: 20 }}
+                    />
+                  ) : (
+                    <TrendingUpIcon
+                      sx={{ color: green[600], width: 20, height: 20 }}
+                    />
+                  )}
+                </div>
+              </div>
+            </div>
+            <div className="">
+              <p className="text-[.6rem]">{coin?.description}</p>
             </div>
           </div>
           <div className="grid grid-cols-2 justify-items-start items-center justify-start py-4 gap-[.5rem]">
