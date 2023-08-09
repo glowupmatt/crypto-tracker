@@ -16,6 +16,7 @@ import classNames from "classnames";
 import InfoIcon from "@mui/icons-material/Info";
 import QueryBuilderIcon from "@mui/icons-material/QueryBuilder";
 import SelectedCryptoToUSD from "@/app/components/SelectedCryptoToUSD";
+import TimeFilters from "@/app/components/TimeFilters";
 
 type Props = {
   params: {
@@ -28,6 +29,7 @@ export type coinType = coinObjType;
 function CoinGraph(props: Props) {
   const { params } = props;
   const [coin, setCoin] = useState<any>();
+  const [timeLength, setTimeLength] = useState<string>("24h");
 
   useEffect(() => {
     const url = `${params.cryptoId}`;
@@ -145,8 +147,17 @@ function CoinGraph(props: Props) {
             })}
           </div>
         </div>
-        <div className="bg-white p-4 rounded-md">
-          <SelectedCryptoToUSD coin={coin} />
+        <div className="bg-white p-4 rounded-md w-full">
+          <TimeFilters
+            coin={coin}
+            timeLength={timeLength}
+            setTimeLength={setTimeLength}
+          />
+          <SelectedCryptoToUSD
+            coin={coin}
+            timeLength={timeLength}
+            setTimeLength={setTimeLength}
+          />
         </div>
       </div>
     );
