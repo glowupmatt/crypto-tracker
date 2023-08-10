@@ -31,12 +31,15 @@ function TimeFilters(props: Props) {
   ];
 
   return (
-    <div className="flex flex-col items-center p-4 gap-4">
-      <h2 className="font-bold text-[.8rem] self-start">
+    <div className="flex flex-col items-center p-4 gap-4 cursor-pointer">
+      <h2 className="font-bold text-[.8rem] self-start md:hidden">
         {coin?.symbol} to USD Chart
       </h2>
-      <div className="flex justify-end w-full bg-gray-300 rounded-md">
-        <div className="bg-gray flex justify-between w-full p-4">
+      <div className="flex justify-end w-full bg-gray-300 rounded-md md:justify-between">
+        <h2 className="hidden font-bold text-[.8rem] self-center md:block p-4">
+          {coin?.symbol} to USD Chart
+        </h2>
+        <div className="bg-gray flex justify-between w-full p-4 md:w-1/2">
           {timeFilter.map((data, index) => {
             return (
               <div

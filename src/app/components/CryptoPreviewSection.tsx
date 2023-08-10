@@ -7,6 +7,7 @@ import classNames from "classnames";
 import EmblaCarousel from "./EmblaCarousel";
 import CryptoCardGrid from "./CryptoCardGrid";
 import { CoinType } from "../page";
+import { usePathname, useRouter } from "next/navigation";
 
 type Props = {
   CryptoObj: CoinType | undefined;

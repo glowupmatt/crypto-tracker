@@ -51,6 +51,7 @@ const SelectedCryptoToUSD = (props: Props) => {
     const priceData = graphData.map((data) => {
       return data.price;
     });
+
     const timeStampData = graphData.map((data) => {
       return data.timestamp;
     });
@@ -71,7 +72,41 @@ const SelectedCryptoToUSD = (props: Props) => {
       data?.toLocaleDateString("en-US") === todaysDate;
       return data?.toLocaleTimeString("en-US");
     });
-    const finalResult = result.map((data) => data?.toLocaleTimeString("en-US"));
+
+    let finalResult;
+    if (timeLength === "24h") {
+      const options: Intl.DateTimeFormatOptions = {
+        hour: "2-digit",
+        minute: "2-digit",
+      };
+      finalResult = result.map((data) =>
+        data?.toLocaleTimeString("en-US", options)
+      );
+    } else if (timeLength === "7d") {
+      const options: Intl.DateTimeFormatOptions = {
+        month: "numeric",
+        day: "numeric",
+      };
+      finalResult = date.map((data) =>
+        data?.toLocaleDateString("en-US", options)
+      );
+    } else if (timeLength === "30d") {
+      const options: Intl.DateTimeFormatOptions = {
+        month: "numeric",
+        day: "numeric",
+      };
+      finalResult = date.map((data) =>
+        data?.toLocaleDateString("en-US", options)
+      );
+    } else {
+      const options: Intl.DateTimeFormatOptions = {
+        month: "numeric",
+        year: "numeric",
+      };
+      finalResult = date.map((data) =>
+        data?.toLocaleDateString("en-US", options)
+      );
+    }
 
     const chartData = {
       labels: finalResult,
@@ -100,7 +135,7 @@ const SelectedCryptoToUSD = (props: Props) => {
             display: false,
           },
           position: "right" as const,
-          reverse: true,
+          reverse: false,
         },
         x: {
           display: true,
@@ -108,7 +143,11 @@ const SelectedCryptoToUSD = (props: Props) => {
             drawBorder: true,
             display: true,
           },
+          reverse: true,
         },
+      },
+      layout: {
+        padding: 25,
       },
       responsive: true,
       maintainAspectRatio: false,
@@ -120,7 +159,7 @@ const SelectedCryptoToUSD = (props: Props) => {
     };
 
     return (
-      <div className="border-solid border-[2px] border-gray w-full h-[20rem]">
+      <div className="border-solid border-[2px] border-gray w-full h-[20rem] lg:h-[30rem]">
         <Line options={options} data={chartData} />
       </div>
     );

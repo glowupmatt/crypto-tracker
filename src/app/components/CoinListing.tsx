@@ -32,12 +32,15 @@ const CoinListing = (props: Props) => {
     router.push(`/market/${data.uuid}`);
   };
   return (
-    <div className="flex justify-between p-4" onClick={onClickHandler}>
+    <div
+      className="flex justify-between p-4 cursor-pointer"
+      onClick={onClickHandler}
+    >
       <div className="flex justify-center items-center gap-2 w-[4rem]">
         <p>{data.rank}</p>
         <Image alt="" src={data.iconUrl} width={30} height={30} />
       </div>
-      <div className="flex flex-col justify-start text-start items-start gap-2 w-[8rem]">
+      <div className="flex flex-col justify-start text-start items-start gap-2 w-[8rem] lg:w-[5rem]">
         <h2>{data.name}</h2>
         <p>{data.symbol}</p>
       </div>

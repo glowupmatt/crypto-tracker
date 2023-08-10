@@ -1,8 +1,11 @@
+"use client";
+
 import React, { useEffect } from "react";
 import CryptoGraph from "./CryptoGraph";
 import useEmblaCarousel from "embla-carousel-react";
 import "../emblaStyles/cardCarousel.css";
 import Autoplay from "embla-carousel-autoplay";
+import { usePathname, useRouter } from "next/navigation";
 
 type Props = {
   graphPriceData:
@@ -49,12 +52,23 @@ const EmblaCarousel = (props: Props) => {
     .sort((highest, lowest) => +highest.price + +lowest.price)
     .filter((data, index) => index <= 4);
 
+  const pathName = usePathname();
+  const router = useRouter();
+  useEffect(() => {
+    const url = `${pathName}`;
+    console.log(url);
+  }, [pathName]);
+
   return (
     <div className="embla p-[1rem]" ref={emblaRef}>
       <div className="embla__container lg:pr-[7rem] lg:pl-[27rem]">
         {filteredGraphPriceData.map((data, index) => {
+          const onClickHandler = () => {
+            router.push(`/market/${data.uuid}`);
+          };
           return (
             <div
+              onClick={onClickHandler}
               key={index}
               className="embla__slide bg-white border-slate-200 border-2 rounded-lg p-4 shadow-lg "
             >

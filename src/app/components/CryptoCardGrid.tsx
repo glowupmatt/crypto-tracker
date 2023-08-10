@@ -1,5 +1,8 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import CryptoGraph from "./CryptoGraph";
+import { usePathname, useRouter } from "next/navigation";
 
 type Props = {
   graphPriceData: {
@@ -32,12 +35,23 @@ function CryptoCardGrid(props: Props) {
 
   // console.log(filteredGraphPriceData);
 
+  const pathName = usePathname();
+  const router = useRouter();
+  useEffect(() => {
+    const url = `${pathName}`;
+    console.log(url);
+  }, [pathName]);
+
   return (
     <div className={cryptoCardStyles}>
       {graphPriceData.map((data, index) => {
+        const onClickHandler = () => {
+          router.push(`/market/${data.uuid}`);
+        };
         return (
           <div
             key={index}
+            onClick={onClickHandler}
             className="bg-white border-slate-200 border-2 rounded-lg p-4 shadow-lg max-w-[25rem] w-full"
           >
             <CryptoGraph data={data} />

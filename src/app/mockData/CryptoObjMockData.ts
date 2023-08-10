@@ -2208,3 +2208,117 @@ export const getTypeObj = {
 };
 
 export type coinObjType = typeof getTypeObj;
+
+const fullCoinDetail = {
+  uuid: "Qwsogvtv82FCd",
+  symbol: "BTC",
+  name: "Bitcoin",
+  description:
+    'Bitcoin is a digital currency with a finite supply, allowing users to send/receive money without a central bank/government, often nicknamed "Digital Gold".',
+  color: "#f7931A",
+  iconUrl: "https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg",
+  websiteUrl: "https://bitcoin.org",
+  links: [
+    {
+      name: "bitcoin.org",
+      type: "website",
+      url: "https://bitcoin.org",
+    },
+    {
+      name: "bitcoinmagazine.com",
+      url: "https://bitcoinmagazine.com/",
+      type: "website",
+    },
+    {
+      name: "bitcointalk.org",
+      url: "https://bitcointalk.org/",
+      type: "bitcointalk",
+    },
+    {
+      name: "blockchain.com",
+      url: "https://www.blockchain.com/explorer",
+      type: "explorer",
+    },
+    {
+      name: "bitcoin/bitcoin",
+      url: "https://github.com/bitcoin/bitcoin",
+      type: "github",
+    },
+    {
+      name: "r/bitcoin",
+      url: "https://www.reddit.com/r/bitcoin/",
+      type: "reddit",
+    },
+    {
+      name: "Bitcoin_Magazine",
+      url: "https://t.me/Bitcoin_Magazine",
+      type: "telegram",
+    },
+    {
+      name: "bitcoin",
+      url: "https://t.me/bitcoin",
+      type: "telegram",
+    },
+    {
+      name: "Bitcoin Whitepaper",
+      url: "https://bitcoin.org/bitcoin.pdf",
+      type: "whitepaper",
+    },
+  ],
+  supply: {
+    confirmed: true,
+    supplyAt: 1691605801,
+    max: "21000000",
+    total: "19452575",
+    circulating: "19452575",
+  },
+  numberOfMarkets: 3648,
+  numberOfExchanges: 126,
+  "24hVolume": "19576813567",
+  marketCap: "574010473035",
+  fullyDilutedMarketCap: "619672199374",
+  price: "29508.199970198875",
+  btcPrice: "1",
+  priceAt: 1691605740,
+  change: "-1.15",
+  rank: 1,
+  sparkline: [
+    "29827.215772036983",
+    "29884.743043909086",
+    "29931.015067506825",
+    "29974.67163344204",
+    "29792.981504750172",
+    "29782.8705068672",
+    "29800.756614141323",
+    "29811.024097968206",
+    "29761.954197806153",
+    "29706.961289520023",
+    "29723.54758458934",
+    "29738.198701109857",
+    "29692.5695888647",
+    "29745.942310047616",
+    "29790.151030056186",
+    "29790.15810429195",
+    "29782.07714670252",
+    "29824.551633316158",
+    "29898.170865998985",
+    "29954.70935152174",
+    "29881.99673206126",
+    "29767.32745918964",
+    "29704.56191279135",
+    "29522.075406840646",
+  ],
+  allTimeHigh: {
+    price: "68763.41083248306",
+    timestamp: 1636502400,
+  },
+  coinrankingUrl: "https://coinranking.com/coin/Qwsogvtv82FCd+bitcoin-btc",
+  tier: 1,
+  lowVolume: false,
+  listedAt: 1330214400,
+  hasContent: true,
+  notices: null,
+  tags: ["layer-1", "proof-of-work"],
+};
+
+export type fullCoinDetailType = typeof fullCoinDetail;
