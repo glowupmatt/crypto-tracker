@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {};
 
@@ -28,9 +29,12 @@ function HomeHeader({}: Props) {
           investments, and market data seamlessly with our all-in-one crypto
           tracker platform
         </p>
-        <button className="bg-indigo-600 p-[1rem] text-white rounded-lg w-[80%] self-center shadow-md">
-          Check The Charts
-        </button>
+        <Link
+          href={"/market"}
+          className="bg-indigo-600 p-[1rem] text-white rounded-lg w-[80%] flex justify-center items-center shadow-md"
+        >
+          <p>Check The Charts</p>
+        </Link>
       </div>
     </div>
   );

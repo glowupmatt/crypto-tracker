@@ -65,7 +65,7 @@ const CryptoDropdownOne = (props: Props) => {
               </div>
             )}
           </NavigationMenuTrigger>
-          <NavigationMenuContent className="overflow-scroll h-[10rem] w-full flex flex-col gap-2 items-center">
+          <NavigationMenuContent className="overflow-scroll h-[10rem] w-full flex flex-col gap-2 items-center lg:h-[15rem]">
             {coinsLimit.map((coin: TokenType, index) => {
               const onClickHandler = () => {
                 setSelectedTokenOne(coin);

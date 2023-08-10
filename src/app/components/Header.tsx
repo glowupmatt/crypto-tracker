@@ -33,7 +33,7 @@ const Header = (props: Props) => {
           <Link onClick={() => setNavOpen(false)} href={"/market"}>
             Market
           </Link>
-          <Link onClick={() => setNavOpen(false)} href={"/"}>
+          <Link onClick={() => setNavOpen(false)} href={"/convert"}>
             Convert
           </Link>
           <Link onClick={() => setNavOpen(false)} href={"/"}>
@@ -50,7 +50,7 @@ const Header = (props: Props) => {
       >
         <Link onClick={() => setNavOpen(false)} href={"/"}>Home</Link>   
         <Link onClick={() => setNavOpen(false)} href={"/market"}>Market</Link>
-        <Link onClick={() => setNavOpen(false)} href={"/"}>Convert</Link>
+        <Link onClick={() => setNavOpen(false)} href={"/convert"}>Convert</Link>
         <Link onClick={() => setNavOpen(false)} href={"/"}>News</Link>
       </div>
     </nav>
