@@ -66,7 +66,7 @@ export default function Home() {
   const [CryptoObj, setCryptoObj] = useState<CoinType | undefined>();
   // const CryptoObj: CoinType | any = data.data.coins;
   useEffect(() => {
-    fetchAllCrypto().then((data) => setCryptoObj(data.data.coins));
+    fetchAllCrypto(4).then((data) => setCryptoObj(data.data.coins));
   }, []);
 
   return (

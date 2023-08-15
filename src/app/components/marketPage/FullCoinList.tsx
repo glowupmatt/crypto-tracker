@@ -1,28 +1,27 @@
-import React from "react";
+import React, { FormEvent, useState } from "react";
 import { CoinType } from "@/app/page";
 import { coinObjType } from "@/app/mockData/CryptoObjMockData";
 import CoinListingDesktop from "../CoinListingDesktop";
 import CoinListing from "../CoinListing";
+import { fetchSearchedCoin } from "@/app/fetchApi/cryptoFetch";
 
 type Props = {
   graphPriceData: CoinType;
-  showIndex: number;
 };
 
 const FullCoinList = (props: Props) => {
-  const { graphPriceData, showIndex } = props;
+  const { graphPriceData } = props;
+
   return (
     <div>
       <div className="md:hidden">
-        {graphPriceData
-          .filter((data, index) => index <= showIndex)
-          .map((data: coinObjType | any, index) => {
-            return (
-              <div key={index}>
-                <CoinListing data={data} />
-              </div>
-            );
-          })}
+        {graphPriceData.map((data: coinObjType | any, index) => {
+          return (
+            <div key={index}>
+              <CoinListing data={data} />
+            </div>
+          );
+        })}
       </div>
       <div className="hidden md:flex flex-col ">
         <div className="flex justify-between md:pl-[2rem] md:pr-[4rem] lg:px-[2rem] py-[2rem]">
@@ -35,15 +34,13 @@ const FullCoinList = (props: Props) => {
           <p>Chart</p>
         </div>
         <hr />
-        {graphPriceData
-          .filter((data, index) => index <= showIndex)
-          .map((data: coinObjType | any, index) => {
-            return (
-              <div key={index}>
-                <CoinListingDesktop data={data} />
-              </div>
-            );
-          })}
+        {graphPriceData.map((data, index) => {
+          return (
+            <div key={index}>
+              <CoinListingDesktop data={data} />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -28,7 +28,7 @@ type Props = {
 
 const CoinListingDesktop = (props: Props) => {
   const { data } = props;
-  const info = data.sparkline;
+  const info = data?.sparkline;
   const numberInfo = info.map((num) => parseFloat(num));
   const trending = data.change;
   // Negative Percentage Change

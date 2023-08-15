@@ -21,7 +21,7 @@ const Convert = (props: Props) => {
   const [selectCryptoTwo, setSelectedCryptoTwo] = useState<selectCryptoType>();
   const [amount, setAmount] = useState("");
   useEffect(() => {
-    fetchAllCrypto().then((data) => setCryptoObj(data.data.coins));
+    fetchAllCrypto(50).then((data) => setCryptoObj(data.data.coins));
   }, []);
 
   const onChangeHandler = (e: React.FormEvent<HTMLInputElement>) => {

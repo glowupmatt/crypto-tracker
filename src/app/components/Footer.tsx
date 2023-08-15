@@ -17,13 +17,13 @@ const Footer = (props: Props) => {
             <div className="flex flex-col gap-4 p-4 rounded-lg justify-between relative text-[.8rem] w-full ">
               <div className="flex h-full justify-evenly shadow-2xl">
                 <Link href={"/"} className="shadow-2xl">
+                  Home
+                </Link>
+                <Link href={"/market"} className="shadow-2xl">
                   Market
                 </Link>
-                <Link href={"/"} className="shadow-2xl">
+                <Link href={"/convert"} className="shadow-2xl">
                   Convert
-                </Link>
-                <Link href={"/"} className="shadow-2xl">
-                  News
                 </Link>
               </div>
               <div className="flex justify-evenly h-full">

@@ -36,9 +36,6 @@ const Header = (props: Props) => {
           <Link onClick={() => setNavOpen(false)} href={"/convert"}>
             Convert
           </Link>
-          <Link onClick={() => setNavOpen(false)} href={"/"}>
-            News
-          </Link>
         </div>
       </div>
       {/* prettier-ignore */}
@@ -51,7 +48,6 @@ const Header = (props: Props) => {
         <Link onClick={() => setNavOpen(false)} href={"/"}>Home</Link>   
         <Link onClick={() => setNavOpen(false)} href={"/market"}>Market</Link>
         <Link onClick={() => setNavOpen(false)} href={"/convert"}>Convert</Link>
-        <Link onClick={() => setNavOpen(false)} href={"/"}>News</Link>
       </div>
     </nav>
   );

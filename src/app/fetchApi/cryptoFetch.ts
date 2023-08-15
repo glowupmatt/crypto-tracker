@@ -31,9 +31,11 @@ export const fetchCoinHistory = async (id: string, timeParam: string) => {
   }
 };
 
-export const fetchAllCrypto = async () => {
+export const fetchAllCrypto = async (limit: number) => {
   try {
-    const { data } = await axios.get(`https://api.coinranking.com/v2/coins`);
+    const { data } = await axios.get(
+      `https://api.coinranking.com/v2/coins?limit=${limit}`
+    );
 
     return data;
   } catch (err) {
@@ -52,6 +54,33 @@ export const fetchCoin = async (id: string) => {
     const { data } = await axios.get(
       `https://api.coinranking.com/v2/coin/${id}`,
       options
+    );
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+const searchOptions = {
+  headers: {
+    "x-access-token": process.env.NEXT_PUBLIC_CRYPTO_API,
+  },
+};
+
+export const fetchSearchedCoin = async (coin: string) => {
+  try {
+    const { data } = await axios.get(
+      `https://api.coinranking.com/v2/search-suggestions?query=${coin}`
+    );
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+export const fetchNextTokenBatch = async (offSetNum: number) => {
+  try {
+    const { data } = await axios.get(
+      `https://api.coinranking.com/v2/coins?offset=${offSetNum}`
     );
     return data;
   } catch (err) {
