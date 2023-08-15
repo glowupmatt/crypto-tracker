@@ -29,7 +29,7 @@ function CoinGraph(props: Props) {
   useEffect(() => {
     const url = `${params.cryptoId}`;
     fetchCoin(url).then((data) => setCoin(data.data.coin));
-    fetchAllCrypto().then((data) => setCoinList(data.data.coins));
+    fetchAllCrypto(100).then((data) => setCoinList(data.data.coins));
   }, [params]);
 
   if (coin !== undefined && coinList) {
